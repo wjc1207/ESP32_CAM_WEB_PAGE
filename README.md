@@ -4,6 +4,7 @@ This is a simple project to show how to use the ESP32-CAM module to create a web
 
 ## Requirements
 module: Seeed Studio XIAO ESP32 S3 Sense
+
 IDE: ESP-IDF
 
 ## How to use
