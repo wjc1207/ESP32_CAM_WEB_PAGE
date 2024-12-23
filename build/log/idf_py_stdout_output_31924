@@ -1,0 +1,57 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\16425\Desktop\4th_year_project\esp32-camera-master\examples\camera_example\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.1.1/components/partition_table/check_sizes.py --offset 0x10000 bootloader 0x0 C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/build/bootloader/bootloader.bin"
+Bootloader binary size 0x57b0 bytes. 0xa850 bytes (66%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/take_picture.c.obj
+[3/8] Linking C static library esp-idf\main\libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable camera_example.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/build/camera_example.bin
+[7/8] cmd.exe /C "cd /D C:\Users\16425\Desktop\4th_year_project\esp32-camera-master\examples\camera_example\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.1.1/components/partition_table/check_sizes.py --offset 0x10000 partition --type app C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/build/partition_table/partition-table.bin C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/build/camera_example.bin"
+camera_example.bin binary size 0x435a0 bytes. Smallest app partition is 0x100000 bytes. 0xbca60 bytes (74%) free.
+[7/8] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.1.1\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.1.1 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/build -P C:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 4MB 0x0 bootloader/bootloader.bin 0x20000 camera_example.bin 0x10000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port COM3
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: f0:9e:9e:3b:db:70
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00020000 to 0x00063fff...
+Flash will be erased from 0x00010000 to 0x00010fff...
+Compressed 22448 bytes to 14255...
+Writing at 0x00000000... (100 %)
+Wrote 22448 bytes (14255 compressed) at 0x00000000 in 0.4 seconds (effective 431.8 kbit/s)...
+Hash of data verified.
+Compressed 275872 bytes to 151851...
+Writing at 0x00020000... (10 %)
+Writing at 0x0002a608... (20 %)
+Writing at 0x00033585... (30 %)
+Writing at 0x000395ed... (40 %)
+Writing at 0x00040d5e... (50 %)
+Writing at 0x0004721c... (60 %)
+Writing at 0x0004d858... (70 %)
+Writing at 0x00055c26... (80 %)
+Writing at 0x0005b964... (90 %)
+Writing at 0x0006173b... (100 %)
+Wrote 275872 bytes (151851 compressed) at 0x00020000 in 2.0 seconds (effective 1093.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 104...
+Writing at 0x00010000... (100 %)
+Wrote 3072 bytes (104 compressed) at 0x00010000 in 0.1 seconds (effective 319.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

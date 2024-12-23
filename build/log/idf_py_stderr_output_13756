@@ -1,0 +1,9 @@
+CMake Error at C:/Espressif/frameworks/esp-idf-v5.1.1/tools/cmake/build.cmake:540 (message):
+  ERROR: Manifest is not valid
+
+Call Stack (most recent call first):
+  C:/Espressif/frameworks/esp-idf-v5.1.1/tools/cmake/project.cmake:547 (idf_build_process)
+  CMakeLists.txt:7 (project)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed

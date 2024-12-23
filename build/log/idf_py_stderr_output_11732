@@ -1,0 +1,203 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM3 instead...[0m
+[0;33m--- idf_monitor on \\.\COM3 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40048836: uart_tx_one_char_uart in ROM
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x403759da: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037b2fd: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381506: abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib/abort.c:38
+[0m
+[0;33m0x40375664: call_start_cpu0 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:466 (discriminator 3)
+[0m
+[0;33m0x40045c01: ets_run_flash_bootloader in ROM
+[0m
+[0;33m0x40375cbc: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/soc/esp32s3/system_internal.c:158 (discriminator 1)
+[0m
+[0m

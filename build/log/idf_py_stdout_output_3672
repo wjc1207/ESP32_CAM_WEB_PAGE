@@ -1,0 +1,29 @@
+[0/1] Re-running CMake...
+-- ccache will be used for faster recompilation
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Using component placed at C:\Users\16425\Desktop\4th_year_project\esp32-camera-master for dependency "espressif/esp32-camera", specified in C:\Users\16425\Desktop\4th_year_project\esp32-camera-master\examples\camera_example\main\idf_component.yml
+NOTICE: Using component placed at C:\Users\16425\Desktop\4th_year_project\esp32-camera-master for dependency "espressif/esp_psram", specified in C:\Users\16425\Desktop\4th_year_project\esp32-camera-master\examples\camera_example\main\idf_component.yml
+NOTICE: Processing 3 dependencies:
+NOTICE: [1/3] espressif/esp32-camera (*) (C:\Users\16425\Desktop\4th_year_project\esp32-camera-master)
+NOTICE: [2/3] espressif/esp_psram (*) (C:\Users\16425\Desktop\4th_year_project\esp32-camera-master)
+NOTICE: [3/3] idf (5.1.1)
+-- Project sdkconfig file C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/sdkconfig
+Loading defaults file C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/sdkconfig.defaults...
+C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/sdkconfig.defaults:3 CONFIG_ESP32S3_DEFAULT_CPU_FREQ_240 was replaced with CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240
+C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/sdkconfig.defaults:15 CONFIG_ESP32S3_SPIRAM_SUPPORT was replaced with CONFIG_SPIRAM
+-- App "camera_example" version: 1
+-- Adding linker script C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/ld/esp32s3/sections.ld.in
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.1.1/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_update bootloader bootloader_support cxx driver efuse esp32-camera esp32-camera-master esp_app_format esp_common esp_hw_support esp_mm esp_partition esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esptool_py freertos hal heap log main mbedtls newlib nvs_flash partition_table pthread soc spi_flash xtensa
+-- Component paths: C:/Espressif/frameworks/esp-idf-v5.1.1/components/app_update C:/Espressif/frameworks/esp-idf-v5.1.1/components/bootloader C:/Espressif/frameworks/esp-idf-v5.1.1/components/bootloader_support C:/Espressif/frameworks/esp-idf-v5.1.1/components/cxx C:/Espressif/frameworks/esp-idf-v5.1.1/components/driver C:/Espressif/frameworks/esp-idf-v5.1.1/components/efuse C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp32-camera C:/Users/16425/Desktop/4th_year_project/esp32-camera-master C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_app_format C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_common C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_hw_support C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_mm C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_partition C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_pm C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_psram C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_ringbuf C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_timer C:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal C:/Espressif/frameworks/esp-idf-v5.1.1/components/heap C:/Espressif/frameworks/esp-idf-v5.1.1/components/log C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/main C:/Espressif/frameworks/esp-idf-v5.1.1/components/mbedtls C:/Espressif/frameworks/esp-idf-v5.1.1/components/newlib C:/Espressif/frameworks/esp-idf-v5.1.1/components/nvs_flash C:/Espressif/frameworks/esp-idf-v5.1.1/components/partition_table C:/Espressif/frameworks/esp-idf-v5.1.1/components/pthread C:/Espressif/frameworks/esp-idf-v5.1.1/components/soc C:/Espressif/frameworks/esp-idf-v5.1.1/components/spi_flash C:/Espressif/frameworks/esp-idf-v5.1.1/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/build

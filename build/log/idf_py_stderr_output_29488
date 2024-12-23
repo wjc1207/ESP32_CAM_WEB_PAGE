@@ -1,0 +1,43 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM3 instead...[0m
+[0;33m--- idf_monitor on \\.\COM3 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x42009f85: s_test_psram at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_psram/esp_psram.c:416
+[0m
+[0;33m0x403756e8: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[1;31mNone[0m
+[0;33mWaiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0;33m0x40375c7e: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037f129: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381e3a: vApplicationStackOverflowHook at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:581
+[0m
+[0;33m0x403807f7: vTaskSwitchContext at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/tasks.c:3729
+[0m
+[0;33m0x40381f48: _frxt_dispatch at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:450
+[0m
+[0;33m0x40381f3e: _frxt_int_exit at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:245
+[0m
+[0;33m0x40375b00: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756e8: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x40375c7e: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/panic.c:452
+[0m
+[0;33m0x4037f129: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x40381e3a: vApplicationStackOverflowHook at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:581
+[0m
+[0;33m0x403807f7: vTaskSwitchContext at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/tasks.c:3729
+[0m
+[0;33m0x40381f48: _frxt_dispatch at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:450
+[0m
+[0;33m0x40381f3e: _frxt_int_exit at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:245
+[0m
+[0;33m0x40382227: _xt_context_save at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_context.S:193
+[0m
+[0;33m0x403756e8: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0m

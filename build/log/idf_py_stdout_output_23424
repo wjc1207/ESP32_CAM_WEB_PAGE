@@ -1,0 +1,10 @@
+[0/1] Re-running CMake...
+-- ccache will be used for faster recompilation
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32s3
+Invalid field "dependencies:espressif/esp32-camera": Unknown fields "espressif/esp_psram" under "dependencies" field that may affect build result
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/16425/Desktop/4th_year_project/esp32-camera-master/examples/camera_example/build/CMakeFiles/CMakeOutput.log".
+FAILED: build.ninja 
+C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe --regenerate-during-build -SC:\Users\16425\Desktop\4th_year_project\esp32-camera-master\examples\camera_example -BC:\Users\16425\Desktop\4th_year_project\esp32-camera-master\examples\camera_example\build

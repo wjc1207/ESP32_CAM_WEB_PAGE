@@ -1,0 +1,226 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x29 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200a0b0
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1874
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xda4
+load:0x403cc700,len:0x3130
+entry 0x403c9934
+[0;32mI (27) boot: ESP-IDF v5.1.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Dec 20 2024 01:06:46[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (40) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (49) boot.esp32s3: SPI Flash Size : 4MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00011000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 00017000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00020020 vaddr=3c0a0020 size=27468h (160872) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=00047490 vaddr=3fc9a000 size=05984h ( 22916) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0004ce1c vaddr=40374000 size=031fch ( 12796) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=93fb8h (606136) map[0m
+[0;32mI (236) esp_image: segment 4: paddr=000e3fe0 vaddr=403771fc size=12d34h ( 77108) load[0m
+[0;32mI (260) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (261) boot: Disabling RNG early entropy source...[0m
+[0;32mI (272) cpu_start: Multicore app[0m
+[0;32mI (272) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (272) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (275) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (281) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (286) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (291) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (296) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (302) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (308) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (314) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (320) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (326) MSPI Timing: PSRAM timing tuning index: 11[0m
+[0;32mI (330) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (335) esp_psram: Speed: 80MHz[0m
+[0;32mI (339) cpu_start: Pro cpu up.[0m
+[0;32mI (343) cpu_start: Starting app cpu, entry point is 0x403756ec[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (801) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (810) cpu_start: Pro cpu start user code[0m
+[0;32mI (810) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (811) cpu_start: Application information:[0m
+[0;32mI (813) cpu_start: Project name:     camera_example[0m
+[0;32mI (819) cpu_start: App version:      1[0m
+[0;32mI (823) cpu_start: Compile time:     Dec 20 2024 23:18:30[0m
+[0;32mI (829) cpu_start: ELF file SHA256:  4f9d9ea00fda32c5...[0m
+[0;32mI (835) cpu_start: ESP-IDF:          v5.1.1-dirty[0m
+[0;32mI (841) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (846) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (850) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (855) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (862) heap_init: At 3FCA5330 len 000443E0 (272 KiB): DRAM[0m
+[0;32mI (869) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (875) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (881) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (888) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (896) spi_flash: detected chip: gd[0m
+[0;32mI (899) spi_flash: flash io: qio[0m
+[0;33mW (903) spi_flash: Detected size(8192k) larger than the size in the binary image header(4096k). Using the size in the binary image header.[0m
+[0;32mI (917) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (923) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (930) app_start: Starting scheduler on CPU0[0m
+[0;32mI (935) app_start: Starting scheduler on CPU1[0m
+[0;32mI (935) main_task: Started on CPU0[0m
+[0;32mI (945) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (953) main_task: Calling app_main()[0m
+PSRAM size: 8388608 bytes
+[0;32mI (971) pp: pp rom version: e7ae62f[0m
+[0;32mI (972) net80211: net80211 rom version: e7ae62f[0m
+I (973) wifi:wifi driver task: 3fcb7438, prio:23, stack:6656, core=0
+I (981) wifi:wifi firmware version: ce9244d
+I (981) wifi:wifi certification version: v7.0
+I (984) wifi:config NVS flash: enabled
+I (987) wifi:config nano formating: disabled
+I (991) wifi:Init data frame dynamic rx buffer num: 32
+I (996) wifi:Init management frame dynamic rx buffer num: 32
+I (1001) wifi:Init management short buffer num: 32
+I (1006) wifi:Init static tx buffer num: 16
+I (1010) wifi:Init tx cache buffer num: 32
+I (1014) wifi:Init static tx FG buffer num: 2
+I (1018) wifi:Init static rx buffer size: 1600
+I (1022) wifi:Init static rx buffer num: 10
+I (1026) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1030) wifi_init: rx ba win: 6[0m
+[0;32mI (1034) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1038) wifi_init: udp mbox: 6[0m
+[0;32mI (1042) wifi_init: tcp mbox: 6[0m
+[0;32mI (1045) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1050) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1054) wifi_init: tcp mss: 1440[0m
+[0;32mI (1058) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1062) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1071) phy_init: phy_version 601,98f2a71,Jun 29 2023,09:58:12[0m
+I (1103) wifi:mode : softAP (f0:9e:9e:3b:db:71)
+I (1106) wifi:Total power save buffer number: 8
+I (1106) wifi:Init max length of beacon: 752/752
+I (1107) wifi:Init max length of beacon: 752/752
+[0;32mI (1110) example:camera_wifi: WiFi initialized. SSID: ESP32-Camera, Password: 12345678[0m
+[0;32mI (1111) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1128) s3 ll_cam: DMA Channel=1[0m
+[0;32mI (1131) cam_hal: cam init ok[0m
+[0;32mI (1135) sccb: pin_sda 40 pin_scl 39[0m
+[0;32mI (1139) sccb: sccb_i2c_port=1[0m
+[0;32mI (1153) camera: Detected camera at address=0x30[0m
+[0;32mI (1156) camera: Detected OV2640 camera[0m
+[0;32mI (1156) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1236) s3 ll_cam: node_size: 3840, nodes_per_line: 1, lines_per_node: 6[0m
+[0;32mI (1237) s3 ll_cam: dma_half_buffer_min:  3840, dma_half_buffer: 15360, lines_per_half_buffer: 24, dma_buffer_size: 30720[0m
+[0;32mI (1245) cam_hal: buffer_size: 30720, half_buffer_size: 15360, node_buffer_size: 3840, node_cnt: 8, total_cnt: 10[0m
+[0;32mI (1256) cam_hal: Allocating 153600 Byte frame buffer in PSRAM[0m
+[0;32mI (1262) cam_hal: cam config ok[0m
+[0;32mI (1266) ov2640: Set PLL: clk_2x: 1, clk_div: 3, pclk_auto: 1, pclk_div: 8[0m
+[0;32mI (1346) main_task: Returned from app_main()[0m
+I (19012) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1
+I (19012) wifi:station: f0:b6:1e:94:2e:dd join, AID=1, bgn, 40U
+[0;32mI (19215) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+I (19447) wifi:<ba-add>idx:2 (ifx:1, f0:b6:1e:94:2e:dd), tid:0, ssn:18, winSize:64
+[0;32mI (31297) example:camera_wifi: Camera capture success[0m
+[0;32mI (31297) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (31393) example:camera_wifi: JPEG compression successful, size: 13204 bytes[0m
+[0;32mI (31401) example:camera_wifi: Image sent successfully[0m
+[0;32mI (33071) example:camera_wifi: Camera capture success[0m
+[0;32mI (33072) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (33168) example:camera_wifi: JPEG compression successful, size: 13893 bytes[0m
+[0;32mI (33178) example:camera_wifi: Image sent successfully[0m
+cam_hal: EV-VSYNC-OVF
+[0;32mI (40610) example:camera_wifi: Camera capture success[0m
+[0;32mI (40611) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (40707) example:camera_wifi: JPEG compression successful, size: 13830 bytes[0m
+[0;32mI (40715) example:camera_wifi: Image sent successfully[0m
+cam_hal: EV-VSYNC-OVF
+[0;32mI (41325) example:camera_wifi: Camera capture success[0m
+[0;32mI (41325) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (41431) example:camera_wifi: JPEG compression successful, size: 26900 bytes[0m
+[0;32mI (41443) example:camera_wifi: Image sent successfully[0m
+[0;32mI (42547) example:camera_wifi: Camera capture success[0m
+[0;32mI (42548) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (42660) example:camera_wifi: JPEG compression successful, size: 36535 bytes[0m
+[0;32mI (42678) example:camera_wifi: Image sent successfully[0m
+[0;32mI (43159) example:camera_wifi: Camera capture success[0m
+[0;32mI (43159) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (43268) example:camera_wifi: JPEG compression successful, size: 31660 bytes[0m
+[0;32mI (43284) example:camera_wifi: Image sent successfully[0m
+[0;32mI (45596) example:camera_wifi: Camera capture success[0m
+[0;32mI (45597) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (45700) example:camera_wifi: JPEG compression successful, size: 24703 bytes[0m
+[0;32mI (45715) example:camera_wifi: Image sent successfully[0m
+cam_hal: EV-VSYNC-OVF
+[0;32mI (46274) example:camera_wifi: Camera capture success[0m
+[0;32mI (46274) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (46373) example:camera_wifi: JPEG compression successful, size: 18091 bytes[0m
+[0;32mI (46382) example:camera_wifi: Image sent successfully[0m
+[0;32mI (46849) example:camera_wifi: Camera capture success[0m
+[0;32mI (46850) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (46948) example:camera_wifi: JPEG compression successful, size: 17576 bytes[0m
+[0;32mI (46960) example:camera_wifi: Image sent successfully[0m
+[0;32mI (47410) example:camera_wifi: Camera capture success[0m
+[0;32mI (47411) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (47510) example:camera_wifi: JPEG compression successful, size: 18419 bytes[0m
+[0;32mI (47522) example:camera_wifi: Image sent successfully[0m
+[0;32mI (48763) example:camera_wifi: Camera capture success[0m
+[0;32mI (48764) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (48862) example:camera_wifi: JPEG compression successful, size: 17722 bytes[0m
+[0;32mI (48873) example:camera_wifi: Image sent successfully[0m
+[0;32mI (49980) example:camera_wifi: Camera capture success[0m
+[0;32mI (49980) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (50080) example:camera_wifi: JPEG compression successful, size: 19989 bytes[0m
+[0;32mI (50091) example:camera_wifi: Image sent successfully[0m
+[0;32mI (50589) example:camera_wifi: Camera capture success[0m
+[0;32mI (50589) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (50689) example:camera_wifi: JPEG compression successful, size: 19033 bytes[0m
+[0;32mI (50699) example:camera_wifi: Image sent successfully[0m
+cam_hal: EV-VSYNC-OVF
+[0;32mI (51615) example:camera_wifi: Camera capture success[0m
+[0;32mI (51615) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (51715) example:camera_wifi: JPEG compression successful, size: 19366 bytes[0m
+[0;32mI (51725) example:camera_wifi: Image sent successfully[0m
+[0;32mI (52065) example:camera_wifi: Camera capture success[0m
+[0;32mI (52065) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (52165) example:camera_wifi: JPEG compression successful, size: 19990 bytes[0m
+[0;32mI (52174) example:camera_wifi: Image sent successfully[0m
+[0;32mI (52440) example:camera_wifi: Camera capture success[0m
+[0;32mI (52440) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (52541) example:camera_wifi: JPEG compression successful, size: 19353 bytes[0m
+[0;32mI (52551) example:camera_wifi: Image sent successfully[0m
+[0;32mI (52827) example:camera_wifi: Camera capture success[0m
+[0;32mI (52827) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (52927) example:camera_wifi: JPEG compression successful, size: 19235 bytes[0m
+[0;32mI (52937) example:camera_wifi: Image sent successfully[0m
+[0;32mI (53875) example:camera_wifi: Camera capture success[0m
+[0;32mI (53876) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (53975) example:camera_wifi: JPEG compression successful, size: 19094 bytes[0m
+[0;32mI (53987) example:camera_wifi: Image sent successfully[0m
+[0;32mI (54461) example:camera_wifi: Camera capture success[0m
+[0;32mI (54462) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (54562) example:camera_wifi: JPEG compression successful, size: 19479 bytes[0m
+[0;32mI (54573) example:camera_wifi: Image sent successfully[0m
+[0;32mI (55005) example:camera_wifi: Camera capture success[0m
+[0;32mI (55005) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (55105) example:camera_wifi: JPEG compression successful, size: 19475 bytes[0m
+[0;32mI (55117) example:camera_wifi: Image sent successfully[0m
+[0;32mI (55691) example:camera_wifi: Camera capture success[0m
+[0;32mI (55692) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (55793) example:camera_wifi: JPEG compression successful, size: 20690 bytes[0m
+[0;32mI (55811) example:camera_wifi: Image sent successfully[0m
+[0;32mI (57745) example:camera_wifi: Camera capture success[0m
+[0;32mI (57746) example:camera_wifi: fb->len: 153600, fb->format: 0, width: 320, height: 240[0m
+[0;32mI (57846) example:camera_wifi: JPEG compression successful, size: 20490 bytes[0m
+[0;32mI (57858) example:camera_wifi: Image sent successfully[0m
+I (694870) wifi:station: f0:b6:1e:94:2e:dd leave, AID = 1, bss_fI (1575764) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1
+I (1575765) wifi:station: f0:b6:1e:94:2e:dd join, AID=1, bgn, 40U
+[0;32mI (1575809) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+I (1575909) wifi:<ba-add>idx:2 (ifx:1, f0:b6:1e:94:2e:dd), tid:0, ssn:13, winSize:64

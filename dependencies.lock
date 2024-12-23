@@ -1,0 +1,37 @@
+dependencies:
+  espressif/esp32-camera:
+    dependencies: []
+    source:
+      path: C:\Users\16425\Desktop\4th_year_project\esp32-camera-master
+      type: local
+    version: '*'
+  espressif/esp_http_server:
+    dependencies: []
+    source:
+      path: C:\Users\16425\Desktop\4th_year_project\esp32-camera-master
+      type: local
+    version: '*'
+  espressif/esp_psram:
+    dependencies: []
+    source:
+      path: C:\Users\16425\Desktop\4th_year_project\esp32-camera-master
+      type: local
+    version: '*'
+  espressif/esp_wifi:
+    dependencies: []
+    source:
+      path: C:\Users\16425\Desktop\4th_year_project\esp32-camera-master
+      type: local
+    version: '*'
+  idf:
+    source:
+      type: idf
+    version: 5.1.1
+direct_dependencies:
+- espressif/esp32-camera
+- espressif/esp_http_server
+- espressif/esp_psram
+- espressif/esp_wifi
+manifest_hash: a83d0a51c862e177b51449b1a0987579e5512a0083c3b580dd6edcd6a8fd7ac8
+target: esp32s3
+version: 2.0.0
