@@ -17,4 +17,4 @@ IDE: ESP-IDF
 8. Enjoy the camera image
 
 ## Example Image
-![Example Image](\image\capture.jpg)
+![Example Image](/image/capture.jpg)
