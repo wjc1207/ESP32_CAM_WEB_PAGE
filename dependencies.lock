@@ -1,37 +1,34 @@
 dependencies:
   espressif/esp32-camera:
-    dependencies: []
+    component_hash: ac4228c825b891378bc0806869170d4ebc5d45ba8ebc519b4f8886a56ad2d123
+    dependencies:
+    - name: espressif/esp_jpeg
+      registry_url: https://components.espressif.com
+      require: public
+      version: ^1.3.1
+    - name: idf
+      require: private
+      version: '>=5.1'
     source:
-      path: C:\Users\16425\Desktop\4th_year_project\esp32-camera-master
-      type: local
-    version: '*'
-  espressif/esp_http_server:
-    dependencies: []
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 2.1.5
+  espressif/esp_jpeg:
+    component_hash: defb83669293cbf86d0fa86b475ba5517aceed04ed70db435388c151ab37b5d7
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
     source:
-      path: C:\Users\16425\Desktop\4th_year_project\esp32-camera-master
-      type: local
-    version: '*'
-  espressif/esp_psram:
-    dependencies: []
-    source:
-      path: C:\Users\16425\Desktop\4th_year_project\esp32-camera-master
-      type: local
-    version: '*'
-  espressif/esp_wifi:
-    dependencies: []
-    source:
-      path: C:\Users\16425\Desktop\4th_year_project\esp32-camera-master
-      type: local
-    version: '*'
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.3.1
   idf:
     source:
       type: idf
-    version: 5.1.1
+    version: 5.5.2
 direct_dependencies:
 - espressif/esp32-camera
-- espressif/esp_http_server
-- espressif/esp_psram
-- espressif/esp_wifi
-manifest_hash: a83d0a51c862e177b51449b1a0987579e5512a0083c3b580dd6edcd6a8fd7ac8
+manifest_hash: 4ccc172cdee12fcfadc31c00f190f99d586989a3af3a1e4c32781309c19406b7
 target: esp32s3
 version: 2.0.0

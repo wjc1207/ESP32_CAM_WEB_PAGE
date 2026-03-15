@@ -1,3 +1,0 @@
-Compiler supported targets: xtensa-esp32s3-elf
-
-ninja: error: unknown target 'manifest-validate'

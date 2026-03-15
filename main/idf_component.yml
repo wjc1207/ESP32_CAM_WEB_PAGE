@@ -1,17 +1,2 @@
 dependencies:
-  espressif/esp32-camera:
-    version: "*"
-    override_path: "../../../"
-
-  espressif/esp_psram:
-    version: "*"
-    override_path: "../../../"
-
-  espressif/esp_wifi:
-    version: "*"
-    override_path: "../../../"
-    
-  espressif/esp_http_server:
-    version: "*"
-    override_path: "../../../"
-
+  espressif/esp32-camera: "*"
