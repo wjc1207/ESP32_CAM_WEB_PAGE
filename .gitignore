@@ -13,3 +13,6 @@ managed_components/
 
 # vscode
 .vscode/
+
+# Secret credentials—never commit
+main/secrets.h

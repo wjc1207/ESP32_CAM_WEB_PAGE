@@ -1,5 +1,8 @@
 idf_component_register(
-    SRCS "take_picture.c"
+    SRCS "main.c"
+         "camera_core.c"
+         "camera_http.c"
+         "wifi_sta.c"
     INCLUDE_DIRS "."
     PRIV_REQUIRES 
         esp_wifi
