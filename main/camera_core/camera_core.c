@@ -5,41 +5,7 @@
 #include "freertos/task.h"
 #include "freertos/semphr.h"
 
-#define CAMERA_STARTUP_SELF_TEST 0
-
-#define CAM_TUNE_BRIGHTNESS 1
-#define CAM_TUNE_CONTRAST 1
-#define CAM_TUNE_SATURATION 0
-#define CAM_TUNE_SHARPNESS 2
-#define CAM_TUNE_DENOISE 0
-
-#define STREAM_FRAME_SIZE FRAMESIZE_VGA
-#define STREAM_JPEG_QUALITY 8
-
-#define CAM_EXTERNAL_XCLK_OSC 1
-
-#define CAM_PIN_PWDN 10
-#define CAM_PIN_RESET 42
-#if CAM_EXTERNAL_XCLK_OSC
-#define CAM_PIN_XCLK -1
-#define CAM_XCLK_FREQ_HZ 12000000
-#else
-#define CAM_PIN_XCLK 10
-#define CAM_XCLK_FREQ_HZ 10000000
-#endif
-#define CAM_PIN_SIOD 40
-#define CAM_PIN_SIOC 39
-#define CAM_PIN_D7 41
-#define CAM_PIN_D6 11
-#define CAM_PIN_D5 12
-#define CAM_PIN_D4 14
-#define CAM_PIN_D3 16
-#define CAM_PIN_D2 18
-#define CAM_PIN_D1 17
-#define CAM_PIN_D0 15
-#define CAM_PIN_VSYNC 38
-#define CAM_PIN_HREF 47
-#define CAM_PIN_PCLK 13
+#include "config.h"
 
 static const char *TAG = "camera_sta";
 
@@ -64,11 +30,11 @@ static camera_config_t s_camera_config = {
     .ledc_timer = LEDC_TIMER_0,
     .ledc_channel = LEDC_CHANNEL_0,
     .pixel_format = PIXFORMAT_JPEG,
-    .frame_size = STREAM_FRAME_SIZE,
-    .jpeg_quality = STREAM_JPEG_QUALITY,
-    .fb_count = 1,
+    .frame_size = CAMERA_STREAM_FRAME_SIZE,
+    .jpeg_quality = CAMERA_STREAM_JPEG_QUALITY,
+    .fb_count = CAMERA_FB_COUNT,
     .fb_location = CAMERA_FB_IN_PSRAM,
-    .grab_mode = CAMERA_GRAB_WHEN_EMPTY,
+    .grab_mode = CAMERA_GRAB_MODE,
 };
 
 static SemaphoreHandle_t s_camera_mutex;
@@ -101,19 +67,19 @@ static void apply_sensor_tuning(sensor_t *s)
     }
 
     if (s->set_brightness) {
-        s->set_brightness(s, CAM_TUNE_BRIGHTNESS);
+        s->set_brightness(s, CAMERA_TUNE_BRIGHTNESS);
     }
     if (s->set_contrast) {
-        s->set_contrast(s, CAM_TUNE_CONTRAST);
+        s->set_contrast(s, CAMERA_TUNE_CONTRAST);
     }
     if (s->set_saturation) {
-        s->set_saturation(s, CAM_TUNE_SATURATION);
+        s->set_saturation(s, CAMERA_TUNE_SATURATION);
     }
     if (s->set_sharpness) {
-        s->set_sharpness(s, CAM_TUNE_SHARPNESS);
+        s->set_sharpness(s, CAMERA_TUNE_SHARPNESS);
     }
     if (s->set_denoise) {
-        s->set_denoise(s, CAM_TUNE_DENOISE);
+        s->set_denoise(s, CAMERA_TUNE_DENOISE);
     }
     if (s->set_whitebal) {
         s->set_whitebal(s, 1);
@@ -134,7 +100,11 @@ static void apply_sensor_tuning(sensor_t *s)
         s->set_ae_level(s, 0);
     }
 
-    ESP_LOGI(TAG, "Sensor tuning applied: sharpness=%d contrast=%d quality=%d", CAM_TUNE_SHARPNESS, CAM_TUNE_CONTRAST, STREAM_JPEG_QUALITY);
+    ESP_LOGI(TAG,
+             "Sensor tuning applied: sharpness=%d contrast=%d quality=%d",
+             CAMERA_TUNE_SHARPNESS,
+             CAMERA_TUNE_CONTRAST,
+             CAMERA_STREAM_JPEG_QUALITY);
 }
 
 esp_err_t camera_core_init(void)
@@ -161,8 +131,8 @@ esp_err_t camera_core_init(void)
     sensor_t *s = esp_camera_sensor_get();
     if (s) {
         ESP_LOGI(TAG, "Sensor detected PID=0x%04X", s->id.PID);
-        s->set_framesize(s, STREAM_FRAME_SIZE);
-        s->set_quality(s, STREAM_JPEG_QUALITY);
+        s->set_framesize(s, CAMERA_STREAM_FRAME_SIZE);
+        s->set_quality(s, CAMERA_STREAM_JPEG_QUALITY);
         apply_sensor_tuning(s);
     }
 
