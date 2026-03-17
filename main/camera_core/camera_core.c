@@ -30,7 +30,7 @@ static camera_config_t s_camera_config = {
     .ledc_timer = LEDC_TIMER_0,
     .ledc_channel = LEDC_CHANNEL_0,
     .pixel_format = PIXFORMAT_JPEG,
-    .frame_size = CAMERA_STREAM_FRAME_SIZE,
+    .frame_size = CAMERA_INIT_FRAME_SIZE,
     .jpeg_quality = CAMERA_STREAM_JPEG_QUALITY,
     .fb_count = CAMERA_FB_COUNT,
     .fb_location = CAMERA_FB_IN_PSRAM,
@@ -38,6 +38,28 @@ static camera_config_t s_camera_config = {
 };
 
 static SemaphoreHandle_t s_camera_mutex;
+static bool s_human_restore_pending;
+static framesize_t s_human_prev_framesize;
+static int s_human_prev_quality;
+
+static void restore_sensor_after_human_capture(void)
+{
+    if (!s_human_restore_pending) {
+        return;
+    }
+
+    sensor_t *s = esp_camera_sensor_get();
+    if (s) {
+        if (s->set_framesize) {
+            s->set_framesize(s, s_human_prev_framesize);
+        }
+        if (s->set_quality) {
+            s->set_quality(s, s_human_prev_quality);
+        }
+    }
+
+    s_human_restore_pending = false;
+}
 
 static camera_fb_t *camera_fb_get_retry(int retry_count, int delay_ms)
 {
@@ -122,6 +144,12 @@ esp_err_t camera_core_init(void)
         ESP_LOGW(TAG, "RESET pin is not controlled by ESP. Ensure OV_RESET is hard-wired HIGH.");
     }
 
+    ESP_LOGI(TAG,
+             "Camera init frame_size=%d stream_frame_size=%d human_frame_size=%d",
+             CAMERA_INIT_FRAME_SIZE,
+             CAMERA_STREAM_FRAME_SIZE,
+             CAMERA_HUMAN_FRAME_SIZE);
+
     esp_err_t err = esp_camera_init(&s_camera_config);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Camera Init Failed");
@@ -184,11 +212,107 @@ esp_err_t camera_core_acquire_fb(camera_fb_t **out_fb,
     return ESP_OK;
 }
 
+esp_err_t camera_core_acquire_fb_latest(camera_fb_t **out_fb,
+                                        TickType_t lock_timeout_ticks)
+{
+    if (out_fb == NULL) {
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    *out_fb = NULL;
+
+    if (s_camera_mutex == NULL || xSemaphoreTake(s_camera_mutex, lock_timeout_ticks) != pdTRUE) {
+        ESP_LOGW(TAG, "Timed out waiting for camera mutex");
+        return ESP_ERR_TIMEOUT;
+    }
+
+    for (int i = 0; i < CAMERA_CAPTURE_LATEST_DROP_COUNT; ++i) {
+        camera_fb_t *stale_fb = camera_fb_get_retry(1, CAMERA_CAPTURE_RETRY_DELAY_MS);
+        if (stale_fb == NULL) {
+            ESP_LOGW(TAG, "Failed to drop stale frame %d", i + 1);
+            break;
+        }
+        esp_camera_fb_return(stale_fb);
+    }
+
+    camera_fb_t *fb = camera_fb_get_retry(CAMERA_CAPTURE_RETRY_COUNT,
+                                          CAMERA_CAPTURE_RETRY_DELAY_MS);
+    if (fb == NULL) {
+        xSemaphoreGive(s_camera_mutex);
+        return ESP_FAIL;
+    }
+
+    *out_fb = fb;
+    return ESP_OK;
+}
+
 void camera_core_release_fb(camera_fb_t *fb)
 {
     if (fb != NULL) {
         esp_camera_fb_return(fb);
     }
+
+    if (s_camera_mutex != NULL) {
+        xSemaphoreGive(s_camera_mutex);
+    }
+}
+
+esp_err_t camera_core_acquire_fb_human(camera_fb_t **out_fb,
+                                       TickType_t lock_timeout_ticks)
+{
+    if (out_fb == NULL) {
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    *out_fb = NULL;
+
+    if (s_camera_mutex == NULL || xSemaphoreTake(s_camera_mutex, lock_timeout_ticks) != pdTRUE) {
+        ESP_LOGW(TAG, "Timed out waiting for camera mutex");
+        return ESP_ERR_TIMEOUT;
+    }
+
+    sensor_t *s = esp_camera_sensor_get();
+    if (s == NULL || s->set_framesize == NULL || s->set_quality == NULL) {
+        xSemaphoreGive(s_camera_mutex);
+        return ESP_ERR_NOT_SUPPORTED;
+    }
+
+    s_human_prev_framesize = s->status.framesize;
+    s_human_prev_quality = s->status.quality;
+    s_human_restore_pending = true;
+
+    if (s->set_framesize(s, CAMERA_HUMAN_FRAME_SIZE) != 0 ||
+        s->set_quality(s, CAMERA_HUMAN_JPEG_QUALITY) != 0) {
+        restore_sensor_after_human_capture();
+        xSemaphoreGive(s_camera_mutex);
+        return ESP_FAIL;
+    }
+
+    vTaskDelay(pdMS_TO_TICKS(CAMERA_HUMAN_WARMUP_MS));
+    camera_fb_t *warmup_fb = esp_camera_fb_get();
+    if (warmup_fb != NULL) {
+        esp_camera_fb_return(warmup_fb);
+    }
+
+    camera_fb_t *fb = camera_fb_get_retry(CAMERA_HUMAN_RETRY_COUNT,
+                                          CAMERA_HUMAN_RETRY_DELAY_MS);
+    if (fb == NULL) {
+        restore_sensor_after_human_capture();
+        xSemaphoreGive(s_camera_mutex);
+        return ESP_FAIL;
+    }
+
+    *out_fb = fb;
+    return ESP_OK;
+}
+
+void camera_core_release_fb_human(camera_fb_t *fb)
+{
+    if (fb != NULL) {
+        esp_camera_fb_return(fb);
+    }
+
+    restore_sensor_after_human_capture();
 
     if (s_camera_mutex != NULL) {
         xSemaphoreGive(s_camera_mutex);

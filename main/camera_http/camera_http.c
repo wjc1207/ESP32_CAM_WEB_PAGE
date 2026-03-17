@@ -57,6 +57,9 @@ static esp_err_t stream_handler(httpd_req_t *req)
     static const char *_STREAM_PART = "Content-Type: image/jpeg\r\nContent-Length: %u\r\n\r\n";
 
     httpd_resp_set_type(req, _STREAM_CONTENT_TYPE);
+    httpd_resp_set_hdr(req, "Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+    httpd_resp_set_hdr(req, "Pragma", "no-cache");
+    httpd_resp_set_hdr(req, "Expires", "0");
 
     while (true) {
         camera_fb_t *fb = NULL;
@@ -114,7 +117,7 @@ static esp_err_t capture_handler(httpd_req_t *req)
     }
 
     camera_fb_t *fb = NULL;
-    esp_err_t acq = camera_core_acquire_fb(&fb, 3, 30, pdMS_TO_TICKS(1000));
+    esp_err_t acq = camera_core_acquire_fb_latest(&fb, pdMS_TO_TICKS(1000));
     if (acq != ESP_OK || fb == NULL) {
         ESP_LOGE(TAG, "Camera capture failed");
         httpd_resp_send_500(req);
@@ -138,6 +141,9 @@ static esp_err_t capture_handler(httpd_req_t *req)
 
     httpd_resp_set_type(req, "image/jpeg");
     httpd_resp_set_hdr(req, "Content-Disposition", "inline; filename=capture.jpg");
+    httpd_resp_set_hdr(req, "Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+    httpd_resp_set_hdr(req, "Pragma", "no-cache");
+    httpd_resp_set_hdr(req, "Expires", "0");
 
     esp_err_t res = httpd_resp_send(req, (const char *)jpg_buf, jpg_len);
 
@@ -146,6 +152,35 @@ static esp_err_t capture_handler(httpd_req_t *req)
     }
     camera_core_release_fb(fb);
 
+    return res;
+}
+
+static esp_err_t capture_human_handler(httpd_req_t *req)
+{
+    if (!check_auth(req)) {
+        httpd_resp_set_status(req, "401 Unauthorized");
+        httpd_resp_set_hdr(req, "WWW-Authenticate", "Bearer realm=\"camera\"");
+        httpd_resp_send(req, "Unauthorized", HTTPD_RESP_USE_STRLEN);
+        return ESP_FAIL;
+    }
+
+    camera_fb_t *fb = NULL;
+    esp_err_t acq = camera_core_acquire_fb_human(&fb, pdMS_TO_TICKS(2000));
+    if (acq != ESP_OK || fb == NULL) {
+        ESP_LOGE(TAG, "Human capture failed, err=0x%x", (unsigned int)acq);
+        httpd_resp_set_status(req, "503 Service Unavailable");
+        httpd_resp_send(req, "Human capture failed", HTTPD_RESP_USE_STRLEN);
+        return ESP_FAIL;
+    }
+
+    httpd_resp_set_type(req, "image/jpeg");
+    httpd_resp_set_hdr(req, "Content-Disposition", "inline; filename=capture_human.jpg");
+    httpd_resp_set_hdr(req, "Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+    httpd_resp_set_hdr(req, "Pragma", "no-cache");
+    httpd_resp_set_hdr(req, "Expires", "0");
+
+    esp_err_t res = httpd_resp_send(req, (const char *)fb->buf, fb->len);
+    camera_core_release_fb_human(fb);
     return res;
 }
 
@@ -171,5 +206,13 @@ void camera_http_start_server(void)
             .user_ctx = NULL,
         };
         httpd_register_uri_handler(server, &capture_uri);
+
+        httpd_uri_t capture_human_uri = {
+            .uri = "/capture_human",
+            .method = HTTP_GET,
+            .handler = capture_human_handler,
+            .user_ctx = NULL,
+        };
+        httpd_register_uri_handler(server, &capture_human_uri);
     }
 }
