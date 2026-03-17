@@ -3,7 +3,7 @@
 This is a simple project to show how to use the ESP32-CAM module to create a web page that shows the camera image.
 
 ## Requirements
-module: Seeed Studio XIAO ESP32 S3 Sense
+module: ESP32S3 + OV2640 camera module
 
 IDE: ESP-IDF
 
@@ -19,3 +19,13 @@ IDE: ESP-IDF
 
 ## Example Image
 ![Example Image](/image/capture.jpg)
+
+## Camera Parameters
+- Aperture: F2.0
+- Focal Length: 2.8mm
+- Resolution: 1600x1200
+- Sensor Size: 1/4 inch
+- Mount Type: M12
+- Field of View: 78 degrees
+- Focus Type: Fixed
+- Image Format: JPEG    
